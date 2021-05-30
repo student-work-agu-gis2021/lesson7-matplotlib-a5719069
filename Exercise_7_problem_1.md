@@ -44,6 +44,11 @@ import numpy as np
 import pandas as pd
 
 # YOUR CODE HERE 1 to set data 
+x=np.random.rand(1000)
+y=np.random.rand(1000)
+data=pd.DataFrame()
+data["x"]=x
+data["y"]=y
 ```
 
 
@@ -64,6 +69,7 @@ The variable `colors` should be an array full of random numbers.
 
 ```python
 # YOUR CODE HERE 2 to set colors
+colors=np.random.rand(1000)
 ```
 
 
@@ -109,14 +115,23 @@ Create a variable `outputfp` with the output filename `my_first_plot.png` and sa
 
 # Plot a scatter plot
 # YOUR CODE HERE 3
+import matplotlib.pyplot as plt
+plt.scatter(x,y,s=50,c='black',cmap='rainbow',edgecolor='red')
 
 # Add labels and title
+plt.title("My random candy points")
+plt.xlabel("X-labels")
+plt.ylabel("Y-labels")
+plt.show()
 # YOUR CODE HERE 4
+
+
 
 # Save the plot as a png file:
 outputfp = "my_first_plot.png"
 
 # YOUR CODE HERE 5
+plt.savefig(outputfp)
 
 # This test print statement should print the output filename of your figure
 print("Saved my first plot as:", outputfp)
